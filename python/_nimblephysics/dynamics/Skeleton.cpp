@@ -1048,6 +1048,14 @@ void Skeleton(
           &dart::dynamics::Skeleton::getMarkerWorldPositions,
           ::py::arg("markers"))
       .def(
+          "getMarkerWorldPositionsJacobianWrtGroupScales",
+          &dart::dynamics::Skeleton::getMarkerWorldPositionsJacobianWrtGroupScales,
+          ::py::arg("markers"))
+      .def(
+          "getMarkerWorldPositionsJacobianWrtJointPositions",
+          &dart::dynamics::Skeleton::getMarkerWorldPositionsJacobianWrtJointPositions,
+          ::py::arg("markers"))
+      .def(
           "getMarkerMapWorldPositions",
           &dart::dynamics::Skeleton::getMarkerMapWorldPositions,
           ::py::arg("markerMap"))
