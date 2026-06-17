@@ -20,6 +20,12 @@ echo "FC=$FC"
 export MACOSX_DEPLOYMENT_TARGET="14.0"
 export CMAKE_FLAGS="-DCMAKE_OSX_ARCHITECTURES=arm64"
 
+# CMake 4.x removed compatibility with cmake_minimum_required(< 3.5), which
+# several of the old pinned dependencies below (libccd, assimp 5.0.1, tinyxml,
+# urdfdom, etc.) still declare. Setting this env var makes CMake fall back to
+# policy version 3.5 for those projects instead of erroring out.
+export CMAKE_POLICY_VERSION_MINIMUM=3.5
+
 export PYTHON3=$(which python3)
 echo "Python3=${PYTHON3}"
 
